@@ -3,230 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <style>
-      body {
-  background-image:url();
-  background-size: cover;
-  font-family: "helvetica", sans-serif;
+     body {
+  min-width:250px;
+    color: black;
+    background-color: white;
+    font-family: 'Roboto',Arial,sans-serif;
+    line-height: 1.5;
 }
 
-p {
-  text-align: center;
-}
-
-.fieldset {
-  background-color: #f7f7f7;
-  border: 1px solid #c0c0c0;
-  width: 438px;
-  margin: 0 0 20px 0;
-}
-
-label,
-legend {
-  font-size: 18px;
-}
-
-div.input-item label,
-label[for="dropdown"],
-label[for="comment"],
-legend {
-  font-weight: bold;
-}
-
-div.fieldset {
-  margin-top: 10px;
-  width: 465px;
-}
-
-div.fieldset div {
-  padding: 4px;
-}
-
-#content {
-  background-color: #fff;
-  width: 460px;
-  padding: 60px;
-  margin: 0 auto;
-  border: 1px solid #eeeeee;
-  border-radius: 20px;
-  box-shadow: 1px 1px #eeeeee;
-}
-
-h1 {
+header {
+  color:black;
   font-size: 30px;
+  margin:10px;
   text-align: center;
-  margin-top: -40px;
+  font-size: 30px;
 }
 
-select#dropdown {
-  width: 302px;
-  display: block;
-  cursor: pointer;
-  height: 26px;
-  border-radius: 6px;
-  margin: 4px 0 20px 0;
-  font-size: 15px;
+#navbar {
+  position:fixed;
+  min-width:250px;
+  top:0px;
+  left:0px;
+  width:300px;
+  height:100%;
+  border-right:solid;
+  border-color:black;
 }
 
-.input-item {
-  margin-bottom: 20px;
+ul {
+  height:75%;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+  li {
+  color: black;
+  border:1px solid;
+  border-bottom-width:0px;
+  padding:8px;
+  padding-left:45px;
+  list-style: none;
+  position:relative;
+  left:-50px;
+  width:100%; 
 }
 
-.inputwrap {
-  border: 6px solid #f0f0f0;
-  width: 452px;
-  height: 28px;
-  display: block;
-  margin-top: 4px;
-  
+ a {
+  color: black;
+  text-decoration:none;
+  cursor:pointer;
+} 
+
+#main-page {
+  position: absolute;
+  margin-left:310px;
+  padding:20px;
+  margin-bottom:110px;
+} 
+
+ header {
+  text-align:left;
+  margin:0px;
 }
 
-div#text-area .inputwrap {
-  height: 92px;
+code {
+  background-color: lightgrey;
+  padding:5px;
+  margin:5px;
 }
-
-input[type="text"],
-input[type="email"],
-input[type="number"],
-textarea {
-  border: 1px solid #c0c0c0;
-  width: 450px;
-  height: 25px;
-  font-size: 15px;
-}
-
-textarea {
-  font-size: 20px;
-  padding: 1px;
-  height: 90px;
-}
-
-hr {
-  border: 0;
-  height: 0;
-  border-bottom: 2px solid #c0c0c0;
-}
-
-#hr-bottom {
-  margin: 30px 0 30px 0;
-  
-}
-
-div#submit-area {
-  display: flex;
-}
-
-p#policy {
-  margin: 0;
-  width: 320px;
-  margin-right: 80px;
-}
-
-button[type="submit"] {
-  width: 170px;
-  height: 40px;
-  color: #fff;
-  background-image: linear-gradient(to bottom, #52b9f2, #3791d9);
-  border-radius: 10px;
-  font-size: 1em;
-}
-
-footer {
-  font-size: 15px;
-  text-align: center;
-  margin-top: 20px;
-}
-
-#submit-area {
-  margin-left: 150px;
-  margin-bottom: -20px;
-}
-
-<div id="content">
-<h1 id="title">Jump Survey</h1>
-<p id="description">Please take a minute to tell about your experience</p>
-<hr id="hr-bottom">
-<form id="survey-form">
-<div class="input-item">
-<label for="name" id="name-label">Name:</label>
-<span class="inputwrap">
-<input type="text" id="name" placeholder="Enter your name" required>
-</span>
-</div>
-<div class="input-item">
-<label for="email" id="email-label">Email:</label>
-<span class="inputwrap">
-<input type="email" id="email" placeholder="Enter your email" required>
-</span>
-</div>
-<div class="input-item">
-<label for="number" id="number-label">Number of Jumps:</label>
-<span class="inputwrap">
-<input type="number" id="number" placeholder="Number of Jumps" required min="1" max="25">
-</span>
-</div>
-
-<label for="dropdown">Where did you jump?</label>
-<select id="dropdown">
-<option selected disabled>Select an Option</option>
-<option value="blue">Bluesky Skydive</option>
-<option value="Orange">Orangesky Skydive</option>
-<option value="Red">Redsky Skydive</option>
-<option value="Purple">Purplesky Skydive</option>
-</select>
-
-<legend>Woud you reccomend Skydiving?</legend>
-<div class="fieldset" id="radio-area">
-<div>
-<input type="radio" id="forsure" name="purchase" value="forsure">
-<label for="forsure">For Sure</label>
-</div>
-<div>
-<input type="radio" id="prolly" name="purchase" value="prolly">
-<label for="prolly">Prolly</label>
-</div>
-<div>
-<input type="radio" id="friends" name="purchase" value="friends">
-<label for="friends">Not to my friends</label>
-</div>
-</div>
-
-<legend>What type of jump did you do? (Select all that apply):</legend>
-<div class="fieldset" id="checkbox-area">
-<div>
-<input type="checkbox" id="tandem" name="features" value="tandem">
-<label for="tandem">Tandem</label>
-</div>
-<div>
-<input type="checkbox" id="cam" name="features" value="cam">
-<label for="cam">Handcam</label>
-</div>
-<div>
-<input type="checkbox" id="video" name="features" value="video">
-<label for="video">Ultimate Video</label>
-</div>
-<div>
-<input type="checkbox" id="aff" name="features" value="aff">
-<label for="aff">Accelerated Free Fall</label>
-</div>
-<div>
-<input type="checkbox" id="ride" name="features" value="ride">
-<label for="ride">Observer Ride</label>
-</div>
-</div>
-
-<div id="text-area">
-<label for="comment">Comments:</label>
-<span class="inputwrap">
-<textarea id="comment" name="comment"></textarea>
-</span>
-</div>
-<hr id="hr-bottom">
-<div id="submit-area">
-<button type="submit" id="submit">Send It</button>
-</div>
-</form>
-</div>
-<footer><font color="white">Code by: Purplesky Skydiving</font></footer>
-</body>
-</html>
+      </style>
+     
+      <nav id="navbar">
+  <header>Red Prairie</header>
+  <ul>
+    <a class="nav-link" herf="#Intro" rel="internal">
+      <li>Introduction</li></a>
+    <a class="nav-link" herf="#UserWorkQueue" rel="internal">
+      <li>User Work Queue</li></a>
+    <a class="nav-link" herf="#Shipment" rel="internal">
+      <li>Shipment Allocation Display</li></a>
+    <a class="nav-link" herf="#Pallets" rel="internal">
+      <li>Release Pallet Picks for Service</li></a>
+     <a class="nav-link" herf="#ShipmentDisplay" rel="internal">
+      <li>Shipment Display</li></a>
+     <a class="nav-link" herf="#PickedInventory" rel="internal">
+      <li>Picked Inventory Display</li></a>
+     <a class="nav-link" herf="#Cancelation" rel="internal">
+      <li>Pick Cancellation Operations</li></a>
+    <a class="nav-link" herf="#Daily" rel="internal">
+      <li>Daily Transaction Display</li></a>
+  </ul>
+</nav>
+<main id="main-page">
+  <section class="main-section" id="Introduction">
+    <header>Introduction</header>
+    <article>
+      <p>The following is a how to tutorial on Export Procedures.
+    
 
